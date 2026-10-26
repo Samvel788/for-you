@@ -7,7 +7,8 @@ export default function AudioPlayer() {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    const audio = new Audio('/audio/salvatore.m4a');
+    const audioUrl = `${import.meta.env.BASE_URL}audio/salvatore.m4a`;
+    const audio = new Audio(audioUrl);
     audio.loop = true;
     audio.volume = 0.45;
     audioRef.current = audio;
