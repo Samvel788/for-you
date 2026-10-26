@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg-dark: #0a0a0a;
+    --color-crimson: #8B0000;
+    --color-blood: #c4122d;
+    --color-burgundy: #4A0E17;
+    --color-gold: #D4AF37;
+    --color-gold-light: #fbe285;
+    --color-parchment: #181214;
+  }
+
+  body {
+    background-color: #0a0a0a;
+    color: #e6dad2;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom typography classes */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-decorative {
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-cursive {
+  font-family: 'Marck Script', 'Great Vibes', cursive;
+}
+
+/* Candle & Torch Animations */
+@keyframes flameWobble {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 10px #ff6a00) drop-shadow(0 0 25px #c4122d);
+  }
+  25% {
+    transform: scale(1.08, 0.94) rotate(1.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 14px #ffaa00) drop-shadow(0 0 35px #e60026);
+  }
+  50% {
+    transform: scale(0.96, 1.05) rotate(-2deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 8px #ff5500) drop-shadow(0 0 22px #8B0000);
+  }
+  75% {
+    transform: scale(1.04, 0.97) rotate(1deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 12px #ff8800) drop-shadow(0 0 30px #c4122d);
+  }
+}
+
+@keyframes smokeRise {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+  50% {
+    transform: translateY(-25px) translateX(6px) scale(1.2);
+    opacity: 0.4;
+    filter: blur(3px);
+  }
+  100% {
+    transform: translateY(-50px) translateX(-8px) scale(1.8);
+    opacity: 0;
+    filter: blur(6px);
+  }
+}
+
+@keyframes candleGlowPulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.15);
+  }
+}
+
+.animate-flame {
+  animation: flameWobble 2.8s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+.animate-smoke {
+  animation: smokeRise 2s forwards ease-out;
+}
+
+.animate-candle-glow {
+  animation: candleGlowPulse 3.5s infinite ease-in-out;
+}
+
+/* Parchment / Journal Styling */
+.parchment-card {
+  background: linear-gradient(135deg, rgba(28, 16, 20, 0.92) 0%, rgba(18, 12, 14, 0.95) 50%, rgba(32, 12, 18, 0.92) 100%);
+  box-shadow: 
+    0 0 35px rgba(139, 0, 0, 0.25),
+    inset 0 0 60px rgba(0, 0, 0, 0.85),
+    inset 0 0 15px rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+.parchment-texture {
+  background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 80%),
+                    radial-gradient(circle at 20% 20%, rgba(139, 0, 0, 0.08) 0%, transparent 60%);
+}
+
+/* Wax Seal 3D Styling */
+.wax-seal-btn {
+  background: radial-gradient(circle at 35% 35%, #c8182b 0%, #8B0000 50%, #40040a 100%);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(139, 0, 0, 0.5),
+    inset 2px 2px 4px rgba(255, 120, 120, 0.4),
+    inset -3px -3px 6px rgba(20, 0, 0, 0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wax-seal-btn:hover {
+  box-shadow: 
+    0 15px 35px rgba(196, 18, 45, 0.5),
+    0 0 30px rgba(212, 175, 55, 0.4),
+    inset 2px 2px 5px rgba(255, 180, 180, 0.5),
+    inset -3px -3px 7px rgba(20, 0, 0, 0.9);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Gold Text Shimmer */
+.gold-shimmer {
+  background: linear-gradient(120deg, #d4af37 0%, #fff2b2 35%, #d4af37 70%, #aa8014 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Gothic Vignette border overlay */
+.vignette-overlay {
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.75) 85%, #050505 100%);
+  pointer-events: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #4A0E17;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B0000;
+}
