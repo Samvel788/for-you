@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="roseGrad" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#ff1a40" />
+      <stop offset="45%" stop-color="#8B0000" />
+      <stop offset="100%" stop-color="#2a0005" />
+    </radialGradient>
+    <filter id="goldGlow">
+      <feGaussianBlur stdDeviation="2" result="glow"/>
+      <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+    </filter>
+  </defs>
+  <circle cx="50" cy="50" r="46" fill="#0a0a0a" stroke="#D4AF37" stroke-width="2" />
+  <!-- stylized gothic rose petals -->
+  <path d="M50 22 C42 22 36 30 38 40 C40 50 50 56 50 56 C50 56 60 50 62 40 C64 30 58 22 50 22 Z" fill="url(#roseGrad)" />
+  <path d="M42 35 C34 37 30 46 34 54 C38 62 50 72 50 72 C50 72 46 60 44 50 C42 42 46 36 42 35 Z" fill="#750005" />
+  <path d="M58 35 C66 37 70 46 66 54 C62 62 50 72 50 72 C50 72 54 60 56 50 C58 42 54 36 58 35 Z" fill="#990008" />
+  <path d="M50 28 C46 30 46 36 50 38 C54 36 54 30 50 28 Z" fill="#ff3355" />
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#8B0000" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+</svg>
